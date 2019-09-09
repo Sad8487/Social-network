@@ -23,8 +23,7 @@ let state = {
             {id: 2, name: "Sashulya"},
             {id: 3, name: "Sasha"},
             {id: 4, name: "Petya"},
-            {id: 5, name: "Valera"},
-            {id: 6, name: "Olya"}
+            {id: 5, name: "Valera"}
         ],
 
         messages: [
