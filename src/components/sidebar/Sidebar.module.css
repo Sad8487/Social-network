@@ -1,0 +1,17 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-bottom: 20px;
+
+}
+.title {
+    align-self: center;
+
+}
+.friends {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
