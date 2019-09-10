@@ -13,7 +13,8 @@ let state = {
         posts: [
             {id: 1, message: "Hi! How are you?", likeCount: "20"},
             {id: 2, message: "It's my first post.", likeCount:"30"},
-            {id: 3, message: "And it's my second post.", likeCount:"40"}
+            {id: 3, message: "And it's my second post.", likeCount:"40"},
+            {id: 3, message: "Good bye.", likeCount:"2"},
         ]
     },
 
