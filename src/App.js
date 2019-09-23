@@ -19,12 +19,17 @@ const App = (props) => {
                 <Header/>
                 <Navbar state={props.state.sidebar}/>
                 <div className="app-content">
+
                     <Route path='/dialogs'
-                           render={() => <Dialogs state = {props.state.dialogsPage} />}/>
+                           render={() => <Dialogs
+                               dialogsPage={props.state.dialogsPage}
+                               dispatch={props.dispatch} />}/>
+
                     <Route path='/profile'
                            render={() => <Profile
-                               state={props.state.profilePage}
-                               addPost={props.addPost}/>}/>
+                               profilePage={props.state.profilePage}
+                               dispatch={props.dispatch}/>}/>
+
                     <Route path='/news' component={() => <News/>}/>
                     {/*<Route path='/news' render={ NewsComponent }/>*/}
                     <Route path='/music' render={() => <Music/>}/>
@@ -33,6 +38,6 @@ const App = (props) => {
             </div>
     );
 
-}
+};
 
 export default App;

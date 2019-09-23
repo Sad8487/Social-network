@@ -1,11 +1,12 @@
 .app-wrapper {
-  height: 100vh;
-  overflow-y: hidden;
-  display: grid;
-  margin: 0 auto;
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 220px 1fr;
-  grid-template-areas: "h h" "n c";
+    height: 100vh;
+    overflow-y: hidden;
+    display: grid;
+    margin: 0 auto;
+    width: 70%;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 220px 1fr;
+    grid-template-areas: "h h" "n c";
 }
  a {
      color: inherit;

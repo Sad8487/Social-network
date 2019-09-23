@@ -5,22 +5,32 @@ import Message from "./message/Message";
 
 
 const Dialogs = (props) => {
-
     //--------------------------------------------   map   -------------------------------------------//
     // let dialogs = dialogs.map( (d)=> { return (
     //     <DialogItem id={d.id} name={d.name} />
     // )})
-    let dialogsElements = props.state.dialogs.map( d => <DialogItem id={d.id} name={d.name} />)
-    let messagesElements = props.state.messages.map( m => <Message message={m.message} />)
+    let dialogsElements = props.dialogsPage.dialogs.map( d => <DialogItem id={d.id} name={d.name} />)
+    let messagesElements = props.dialogsPage.messages.map( m => <Message message={m.message} />)
     //--------------------------------------------   map   -------------------------------------------//
 
     let newMessageElement = React.createRef();
 
-    let addNewMassage = () => {
-        let newMessage = newMessageElement.current.value;
-        alert(newMessage);
-        newMessageElement.current.value = "";
+    let addMessage = () => {
+        // props.addMessage()
+        props.dispatch( {type: "ADD-MESSAGE"} )
     };
+
+    let onMessageChange = () => {
+        let messageText = newMessageElement.current.value;
+        // props.updateMessageText(messageText)
+        let action = {
+            type: "UPDATE-MESSAGE-TEXT",
+            newMessageText: messageText
+        };
+
+        props.dispatch( action )
+    };
+
 
     return (
         <div className={style.dialogs}>
@@ -35,8 +45,8 @@ const Dialogs = (props) => {
                 { messagesElements }
 
                 <div className="newMessage">
-                    <textarea ref={newMessageElement}></textarea>
-                    <button onClick={addNewMassage}>Добавить</button>
+                    <textarea onChange={onMessageChange} ref={newMessageElement} value={props.dialogsPage.newMessageText}></textarea>
+                    <button onClick={addMessage}>Добавить</button>
                 </div>
             </div>
         </div>
