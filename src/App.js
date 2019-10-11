@@ -13,7 +13,7 @@ import Settings from "./components/settings/Settings";
 // let NewsComponent = ()=> <News />
 
 const App = (props) => {
-
+debugger
     return (
             <div className="app-wrapper">
                 <Header/>
@@ -22,8 +22,9 @@ const App = (props) => {
 
                     <Route path='/dialogs'
                            render={() => <Dialogs
-                               dialogsPage={props.state.dialogsPage}
-                               dispatch={props.dispatch} />}/>
+                               // dialogsPage={props.state.dialogsPage}
+                               // dispatch={props.dispatch}
+                               store={props.store}/>}/>
 
                     <Route path='/profile'
                            render={() => <Profile
