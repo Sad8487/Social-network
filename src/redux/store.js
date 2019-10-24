@@ -35,7 +35,6 @@ let store = {
                 {id: 4, message: "Yo"},
                 {id: 5, message: "Yo"}
             ],
-            // newMessageText: ""
             newMessageBody: ""
         },
         sidebar: {
@@ -55,13 +54,13 @@ let store = {
         return this._state
     },              //метод, который меняет стейт
     subscribe(observer) {
-        this._callSubscriber = observer;
-    },     //метод, который сообщает, что стейт изменился
+        this._callSubscriber = observer;  //метод, который сообщает, что стейт изменился
+    },
 
     dispatch(action) { // {type: "ADD-POST"}
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
-
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
         this._callSubscriber(this._state);
     }
 };
