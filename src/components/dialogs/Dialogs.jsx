@@ -8,42 +8,18 @@ import { sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dial
 
 const Dialogs = (props) => {
 
-    //--------------------------------------------   map   -------------------------------------------//
-    // let dialogs = dialogs.map( (d)=> { return (
-    //     <DialogItem id={d.id} name={d.name} />
-    // )})
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage;
     let dialogsElements = state.dialogs.map( d => <DialogItem id={d.id} name={d.name} />);
     let messagesElements = state.messages.map( m => <Message message={m.message} />);
     let newMessageBody = state.newMessageBody;
-    //--------------------------------------------   map   -------------------------------------------//
-
-    // let newMessageElement = React.createRef();
-    //
-    // let addMessage = () => {
-    //
-    //     // props.addMessage()
-    //     props.dispatch( addMessageActionCreator() )
-    // };
-    //
-    // let onMessageChange = () => {
-    //     let messageText = newMessageElement.current.value;
-    //     // props.updateMessageText(messageText)
-    //     // let action = {
-    //     //     type: "UPDATE-MESSAGE-TEXT",
-    //     //     newMessageText: messageText
-    //     // };
-    //
-    //     props.dispatch( updateMessageTextCreator(messageText) )
-    // };
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator())
+        props.sendMessage()
     };
 
     let onNewMessageChange = (e) => {
        let body = e.target.value;
-       props.store.dispatch(updateNewMessageBodyCreator(body))
+       props.updateNewMessageBody(body);
 
     };
 
@@ -58,12 +34,6 @@ const Dialogs = (props) => {
 
             <div className={style.messagesItems}>
 
-                {/*{ messagesElements }*/}
-                {/*<div className="newMessage">*/}
-                    {/*<textarea onChange={onMessageChange} ref={newMessageElement} value={props.dialogsPage.newMessageText}></textarea>*/}
-                    {/*<button onClick={addMessage}>Добавить</button>*/}
-                {/*</div>*/}
-
                 <div>{ messagesElements }</div>
                 <div><textarea placeholder="Enter your message"
                                value={newMessageBody}
@@ -72,6 +42,6 @@ const Dialogs = (props) => {
             </div>
         </div>
     )
-}
+};
 
 export default Dialogs;
