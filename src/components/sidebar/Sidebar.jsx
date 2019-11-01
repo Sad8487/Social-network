@@ -5,6 +5,7 @@ import Friend from "./Friend/Friend";
 
 
 const Sidebar = (props) => {
+    debugger
     let friends = props.state.friends.map( f => <Friend name={f.name} avatar={f.avatar}/>)
 
     return (

@@ -14,23 +14,18 @@ import DialogsContainer from "./components/dialogs/DialogsContainer";
 // let NewsComponent = ()=> <News />
 
 const App = (props) => {
+    debugger
     return (
             <div className="app-wrapper">
-                <Header/>
-                <Navbar state={props.state.sidebar}/>
+                <Header />
+                <Navbar />
                 <div className="app-content">
 
                     <Route path='/dialogs'
-                           render={() => <DialogsContainer
-                               // dialogsPage={props.state.dialogsPage}
-                               // dispatch={props.dispatch}
-                               store={props.store}/>}/>
+                           render={() => <DialogsContainer />}/>
 
                     <Route path='/profile'
-                           render={() => <Profile
-                               // profilePage={props.state.profilePage}
-                               // dispatch={props.dispatch}
-                               store={props.store}/>}/>
+                           render={() => <Profile />}/>
 
                     <Route path='/news' component={() => <News/>}/>
                     {/*<Route path='/news' render={ NewsComponent }/>*/}
