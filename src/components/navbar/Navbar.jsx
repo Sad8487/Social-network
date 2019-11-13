@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import style from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 import Sidebar from "../sidebar/Sidebar";
-import StoreContext from "../../StoreContext";
 
-console.log(style)
+// console.log(style);
 
 // module.css - это объект, у которого есть свойства 'ключ': 'значение'.
 // let style = {
@@ -21,39 +20,30 @@ console.log(style)
 // let ourClasses = {`${style.item} ${style.active}`}
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+    let state = props.sidebar;
 
+    return <nav className={style.nav}>
+        <div className={style.navItems}>
+            <div className={`${style.item} ${style.active}`}>
+                <NavLink to="/profile" activeClassName={style.activeLink}>Profile</NavLink>
+            </div>
+            <div className={style.item}>
+                <NavLink to="/dialogs" activeClassName={style.activeLink}>Messages</NavLink>
+            </div>
+            <div className={style.item}>
+                <NavLink to="/news" activeClassName={style.activeLink}>News</NavLink>
+            </div>
+            <div className={style.item}>
+                <NavLink to="/music" activeClassName={style.activeLink}>Music</NavLink>
+            </div>
+            <div className={style.item}>
+                <NavLink to="/settings" activeClassName={style.activeLink}>Settings</NavLink>
+            </div>
+        </div>
+        <Sidebar state={state}/>
+    </nav>
+};
 
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                debugger
-                let state = store.getState().sidebar;
-                return <nav className={style.nav}>
-                    <div className={style.navItems}>
-                        <div className={`${style.item} ${style.active}`}>
-                            <NavLink to="/profile" activeClassName={style.activeLink}>Profile</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/dialogs" activeClassName={style.activeLink}>Messages</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/news" activeClassName={style.activeLink}>News</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/music" activeClassName={style.activeLink}>Music</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/settings" activeClassName={style.activeLink}>Settings</NavLink>
-                        </div>
-                    </div>
-                    <Sidebar state={state}/>
-                </nav>
-            }
-        }
-
-        </StoreContext.Consumer>
-    )
-}
 
 export default Navbar
