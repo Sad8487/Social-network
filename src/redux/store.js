@@ -39,10 +39,10 @@ let store = {
         },
         sidebar: {
             friends: [
-                {name: "Valera", avatar: ava1},
-                {name: "Sveta", avatar: ava2},
-                {name: "Sasha", avatar: ava3},
-                {name: "Petya", avatar: ava4},
+                {id: 1, name: "Valera", avatar: ava1},
+                {id: 2, name: "Sveta", avatar: ava2},
+                {id: 3, name: "Sasha", avatar: ava3},
+                {id: 5, name: "Petya", avatar: ava4},
             ]
         }
     },

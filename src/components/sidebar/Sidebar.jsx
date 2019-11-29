@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import style from './Sidebar.module.css';
-import {NavLink} from "react-router-dom";
 import Friend from "./Friend/Friend";
-
+// import {connect} from "react-redux"
 
 const Sidebar = (props) => {
-    debugger
-    let friends = props.state.friends.map( f => <Friend name={f.name} avatar={f.avatar}/>)
+    let friends = props.friends.map( f => {
+        return <Friend name={f.name} avatar={f.avatar} key={f.id}/>
+    });
 
     return (
         <div className={style.sidebar}>
@@ -16,6 +16,16 @@ const Sidebar = (props) => {
             </div>
         </div>
     )
-}
+};
+
+// Вот так пишется в реале. И не нужно создавать отдельный файл ComponentContainer
+// const mapStateToProps = (state)=> {
+//     return {
+//         friends: state.sidebar.friends
+//     }
+// };
+//
+//
+// export default connect(mapStateToProps, null)(Sidebar)
 
 export default Sidebar

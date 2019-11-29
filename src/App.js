@@ -9,7 +9,6 @@ import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/settings/Settings";
 import DialogsContainer from "./components/dialogs/DialogsContainer";
-import NavbarContainer from "./components/navbar/NavbarContainer";
 
 
 // let NewsComponent = ()=> <News />
@@ -18,7 +17,7 @@ const App = (props) => {
     return (
             <div className="app-wrapper">
                 <Header />
-                <NavbarContainer />
+                <Navbar />
                 <div className="app-content">
 
                     <Route path='/dialogs'

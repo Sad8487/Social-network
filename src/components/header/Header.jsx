@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import style from './Header.module.css';
-
+import logo from './../../images/owl-white.2dce1ae96856.png'
 
 const Header = () => {
     return  <header className={style.header}>
-        <img src="https://s3.amazonaws.com/peoplepng/wp-content/uploads/2019/01/06141000/google-logo-png-5-1.png" />
+        <img src={logo} />
     </header>
 }
 
