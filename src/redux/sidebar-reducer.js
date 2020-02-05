@@ -1,7 +1,7 @@
-import ava1 from "../images/face1.jpg"
-import ava2 from "../images/face2.jpg"
-import ava3 from "../images/face3.jpg"
-import ava4 from "../images/face4.jpg"
+import ava1 from "../../src/assets/images/face1.jpg"
+import ava2 from "../../src/assets/images/face2.jpg"
+import ava3 from "../../src/assets/images/face3.jpg"
+import ava4 from "../../src/assets/images/face4.jpg"
 
 
 let initialState = {

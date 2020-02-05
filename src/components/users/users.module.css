@@ -1,0 +1,76 @@
+.usersWrap {
+    display: flex;
+    margin: 10px;
+    background-color: #e8f2f3;
+    padding: 15px;
+}
+.usersWrap:hover {
+    background-color: #f7fcfd;
+}
+
+.avatarBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+
+}
+.avatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 8px;
+
+}
+.avatar img {
+    width: 60px;
+}
+
+.following {
+    width: 70px;
+}
+
+.info {
+    /*width: 100%;*/
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfo, .userLocation {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo {
+    max-width: 350px;
+    margin-right: 10px;
+}
+.userInfo span{
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+
+}
+
+.userLocation {
+    align-items: flex-end;
+}
+
+.paginationBlock {
+    display: flex;
+    flex-wrap: wrap;
+}
+.page {
+    margin-right: 5px;
+    cursor: pointer;
+}
+.page:hover {
+    font-weight: bold;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
