@@ -17,8 +17,13 @@ const ProfileInfo = (props) => {
                  {/*src="https://wallpapercave.com/wp/8jd9EeF.jpg"/>*/}
         </div>
         <div className={style.descriptionBlock}>
-            <img src={props.profile.photos.large} alt=""/>
-            ava + description
+            <img className={style.profileAvatar} src={props.profile.photos.large} alt=""/>
+            <div className={style.description}>
+                <span>Name: {props.profile.fullName}</span>
+                <span>About me: {props.profile.aboutMe}</span>
+                <span>Looking for a job: {props.profile.lookingForAJobDescription}</span>
+            </div>
+
         </div>
     </div>
     )
